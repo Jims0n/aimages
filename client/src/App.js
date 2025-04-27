@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { darkTheme } from "./utils/Theme";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
 const Container = styled.div`
@@ -13,7 +13,7 @@ const Container = styled.div`
   color: ${({ theme }) => theme.text_primary};
   overflow-x: hidden;
   overflow-y: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 `;
 
 const Wrapper = styled.div`
@@ -25,17 +25,16 @@ const Wrapper = styled.div`
   flex: 3;
 `;
 
-
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <Container>
         <Wrapper>
           <BrowserRouter>
-          <Navbar />
+            <Navbar />
             <Routes>
-              <Route path="/" element={<Home />} exact/>
-              <Route path="/post" element={<CreatePost />} exact/>
+              <Route path="/" element={<Home />} exact />
+              <Route path="/post" element={<CreatePost />} exact />
             </Routes>
           </BrowserRouter>
         </Wrapper>
